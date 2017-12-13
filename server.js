@@ -4,6 +4,8 @@ const fs = require('fs');
 var app = express(); // Getting an instance of request.
 //Express middleware.I'd like 'express'to work differently.
 
+const port = process.env.PORT || 1997;
+
 // Setting up partials.
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('currYear', () => {
@@ -38,7 +40,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   res.render('maintenance.hbs', {
     title: req.url
-  });  
+  });
 });
 
 
@@ -62,6 +64,6 @@ app.get('/bad', (req, res) => {
   });
 });
 
-app.listen(1997, () =>{
-  console.log("Server is up and running.");
+app.listen(port, () =>{
+  console.log(`Server is up and running @ port ${port}`);
 });
