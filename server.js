@@ -37,11 +37,11 @@ app.use((req, res, next) => {
   next(); // Do not forget to call this.
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs', {
-    title: req.url
-  });
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs', {
+//     title: req.url
+//   });
+// });
 
 
 // Setting up request handlers.
